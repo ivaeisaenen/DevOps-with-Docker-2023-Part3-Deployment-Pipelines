@@ -1,2 +1,5 @@
 node_modules
 docker-compose.yml
+docker-compose-local-build.yml
+.dockerignore
+.gitignore
