@@ -29,5 +29,6 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
+        file: ./Dockerfile-build-express-app
         push: true
         tags: ivaeisaenen/devops-with-docker-2023-part3-deployment-pipelines:latest
