@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+
+  # https://hub.docker.com/r/ivaeisaenen/devops-with-docker-2023-part3-deployment-pipelines
+  express-app_service:
+    image: ivaeisaenen/devops-with-docker-2023-part3-deployment-pipelines:latest
+    ports:
+      - 8080:8080
+    container_name: express-app_container
+    # Full exclude container selection documentation: https://containrrr.dev/watchtower/container-selection/
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+  # Watchtower documentation https://containrrr.dev/watchtower/
+  watchtower_service:
+    image: containrrr/watchtower
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
+      -  WATCHTOWER_LABEL_ENABLE=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower_container
