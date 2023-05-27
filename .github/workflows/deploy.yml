@@ -30,4 +30,4 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: ivaeisaenen/DevOps-with-Docker-2023-Part3-Deployment-Pipelines:latest
+        tags: ivaeisaenen/devops-with-docker-2023-part3-deployment-pipelines:latest
