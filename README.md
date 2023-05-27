@@ -4,9 +4,9 @@
 
 ```
 using github actions pipelines .github/workflows/deploy.yml
-1. Checkout Github repository
-2. Login Docker
-3. Build and Push Docker image
+1. Checkouts Github repository
+2. Logins Docker
+3. Builds and Pushes Docker image for express-app (Dockerfile-build-express-app)
 ```
 
 ## express-app
@@ -16,7 +16,10 @@ Copied from: https://github.com/docker-hy/material-applications/tree/main/expres
 Access with browser http://localhost:8080
 
 ## Docker composite up
+
+ ... -f docker-composite.yml
+
 ```
-1. Pull the previously created image and deploy service
-2. Use Wathtover to check if docker image is updated and pull & deploy if updated
+1. Pulls the previously created image and deploys service
+2. Uses Watchtower to check if docker image is updated and pull & deploy if updated
 ```
